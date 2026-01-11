@@ -27,10 +27,11 @@ TABLE_FINAL = 'TB_RENIEC_Historico'        # Tabla final con datos limpios
 # ================================================================================
 # RUTAS DE ARCHIVOS
 # ================================================================================
+# Calcula la carpeta raíz del proyecto ("2. RENIEC - ...") a partir de la ubicación de este script
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PARENT_DIR = os.path.dirname(SCRIPT_DIR)  # Sube a la carpeta "2. RENIEC..."
-PARENT_DIR = os.path.dirname(PARENT_DIR)  # Sube a carpeta de usuario
-CSV_DIR = os.path.join(PARENT_DIR, '2. RENIEC - Centros de atención del RENIEC a nivel nacional [Registro Nacional de Identificación y Estado Civil]', 'CVS', 'Extraccion de los datos')
+WORKSPACE_DIR = os.path.dirname(os.path.dirname(SCRIPT_DIR))  # .../2. RENIEC - ...
+# Carpeta donde se encuentran los archivos consolidados
+CSV_DIR = os.path.join(WORKSPACE_DIR, 'CVS', 'Extraccion de los datos')
 ARCHIVO_CSV_HISTORICO = os.path.join(CSV_DIR, 'RENIEC_Historico_Completo.csv')
 ARCHIVO_XLSX_HISTORICO = os.path.join(CSV_DIR, 'RENIEC_Historico_Completo.xlsx')
 

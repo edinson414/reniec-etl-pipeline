@@ -95,6 +95,7 @@ def crear_tabla_staging(conn):
 # ================================================================================
 def cargar_csv_a_sql(conn, archivo_csv, batch_size=1000):
     """Carga datos desde CSV a tabla staging"""
+    cursor = None
     try:
         logger.info(f"[LEYENDO] {archivo_csv}")
         df = pd.read_csv(archivo_csv, encoding='utf-8-sig')
@@ -164,7 +165,11 @@ def cargar_csv_a_sql(conn, archivo_csv, batch_size=1000):
         logger.error(f"[ERROR] No se pudo cargar CSV: {e}")
         raise
     finally:
-        cursor.close()
+        if cursor is not None:
+            try:
+                cursor.close()
+            except Exception:
+                pass
 
 # ================================================================================
 # CREAR TABLA FINAL
