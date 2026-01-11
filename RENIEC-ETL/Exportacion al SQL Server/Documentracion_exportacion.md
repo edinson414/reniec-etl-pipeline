@@ -20,6 +20,7 @@ Este documento explica, en lenguaje sencillo, cómo el proyecto carga la informa
 - config_sql.py: Archivo de configuración (servidor, base de datos, rutas de archivo, esquema de tabla e índices).
 
 Puede verlos aquí:
+
 - RENIEC-ETL/Exportacion al SQL Server/importar_a_sql_server.py
 - RENIEC-ETL/Exportacion al SQL Server/conexion_sql.py
 - RENIEC-ETL/Exportacion al SQL Server/config_sql.py
