@@ -165,7 +165,6 @@ CVS/Extraccion de los datos/
 
 Durante la ejecución verás mensajes como estos:
 
-
 - `[LEY] Leyendo: 10. Reporte I Trimestre 2024.csv` - Está leyendo un archivo CSV.
 - `[OK] Procesado: 1,234 registros (Período: 2024-03-31)` - Se procesó correctamente.
 - `[DEDUP] Histórico: 15,000 -> 14,856 registros` - Eliminó 144 filas completamente duplicadas.
