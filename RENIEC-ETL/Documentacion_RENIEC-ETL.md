@@ -37,7 +37,7 @@ El proyecto se divide en dos carpetas principales:
 
 Aquí están los scripts que procesan los archivos CSV y generan los archivos consolidados.
 
-#### Archivos principales:
+#### Archivos principales
 
 - **Panda.py** - Script principal que ejecuta todo el proceso.
 - **config_paths.py** - Define dónde están los archivos de entrada y dónde se guardarán los resultados.
@@ -99,20 +99,20 @@ El proceso se ejecuta en **3 fases** cuando corres el script `Panda.py`:
 
 ## Requisitos para ejecutar el proyecto
 
-### Software necesario:
+### Software necesario
 
 - **Python 3** instalado (versión 3.8 o superior).
 - Paquetes de Python: `pandas`, `openpyxl`.
 
-### Instalación de paquetes (PowerShell):
+### Instalación de paquetes (PowerShell)
 
 ```powershell
 pip install pandas openpyxl
 ```
 
-### Estructura de carpetas esperada:
+### Estructura de carpetas esperada
 
-```
+```text
 RENIEC-ETL/
 ├── Codigo Python/
 │   ├── Panda.py
@@ -151,7 +151,7 @@ python Panda.py
 
 El script mostrará mensajes de progreso en la consola. Al finalizar, encontrarás los archivos generados en:
 
-```
+```text
 CVS/Extraccion de los datos/
 ├── RENIEC_Historico_Completo.xlsx
 ├── RENIEC_Historico_Completo.csv
@@ -164,6 +164,7 @@ CVS/Extraccion de los datos/
 ## Interpretación de los mensajes de consola
 
 Durante la ejecución verás mensajes como estos:
+
 
 - `[LEY] Leyendo: 10. Reporte I Trimestre 2024.csv` - Está leyendo un archivo CSV.
 - `[OK] Procesado: 1,234 registros (Período: 2024-03-31)` - Se procesó correctamente.
@@ -228,7 +229,7 @@ Los archivos Excel se guardan con formato profesional:
 - **Columnas ajustadas**: Anchos personalizados para cada columna.
 - **Texto centrado y ajustado**: Fácil de leer.
 
-### Columnas en el Histórico:
+### Columnas en el Histórico
 
 1. PERIODO
 2. DEPARTAMENTO
@@ -240,7 +241,7 @@ Los archivos Excel se guardan con formato profesional:
 8. DIRECCION
 9. ARCHIVO_ORIGEN
 
-### Columnas en el Limpio:
+### Columnas en el Limpio
 
 1. DEPARTAMENTO
 2. PROVINCIA
@@ -290,17 +291,17 @@ Si RENIEC publica un nuevo reporte trimestral:
 
 1. **Descarga el archivo CSV** y colócalo en la carpeta `CVS/`.
 
-2. **Abre `config_archivos.py`** y agrega una entrada para el nuevo archivo:
+1. **Abre `config_archivos.py`** y agrega una entrada para el nuevo archivo:
 
-```python
-'18. Reporte I Trimestre 2026': {
-    'sep': ',',              # Prueba primero con coma
-    'skip': 1,               # Salta 1 fila de encabezado
-    'periodo': '2026-03-31'  # Fecha del trimestre
-},
-```
+   ```python
+   '18. Reporte I Trimestre 2026': {
+       'sep': ',',              # Prueba primero con coma
+       'skip': 1,               # Salta 1 fila de encabezado
+       'periodo': '2026-03-31'  # Fecha del trimestre
+   },
+   ```
 
-3. **Ejecuta nuevamente `Panda.py`** para regenerar los archivos consolidados.
+1. **Ejecuta nuevamente `Panda.py`** para regenerar los archivos consolidados.
 
 ---
 
